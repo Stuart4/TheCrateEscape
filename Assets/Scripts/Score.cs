@@ -17,13 +17,6 @@ public class Score : MonoBehaviour {
 		score += Time.deltaTime;
 	}
 
-	void OnGUI () {
-		GUI.Label(new Rect(10, 10, 100, 30), "Score: " + (int)(score));
-	}
-
-	void startMusic() {
-	}
-
 	IEnumerator FadeAudio (float timer, bool fadeIn) {
 	    float start = fadeIn ? 0.0F : 1.0F;
 	    float end = fadeIn ? 1.0F : 0.0F;

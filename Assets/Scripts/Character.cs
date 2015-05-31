@@ -70,7 +70,7 @@ public class Character : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (!transmitting) return;
-		float xComponent = Input.acceleration.x * speed;
+		float xComponent = Input.GetAxis("Horizontal") * speed;
 		float yComponent = rb.velocity.y;
 		Vector2 movementVector = new Vector2(xComponent, yComponent);
 		rb.velocity = movementVector;
@@ -78,7 +78,7 @@ public class Character : MonoBehaviour {
 	}
 
 	public void Jump() {
-		if (isGrounded && canJump) {
+		if (isGrounded && canJump && transmitting) {
 			float xComponent = rb.velocity.x;
 			float yComponent = upSpeed;
 			canJump = false;
@@ -90,6 +90,7 @@ public class Character : MonoBehaviour {
 	}
 
 	public void switchCrate() {
+		if (!transmitting) return;
 		boxStatus = (boxStatus + 1) % 3;
 		animator.SetInteger("boxStatus", boxStatus);
 		switchAudio.Play();
