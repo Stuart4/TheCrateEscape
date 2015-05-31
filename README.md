@@ -11,6 +11,11 @@ $ git clone https://github.com/Stuart4/TheCrateEscape.git
 $ cd TheCrateEscape/{Linux,Windows,Mac}
 $ <execute the game as per your platform>
 ```
+- Jump with A.
+- Toggle transmission antenna with X.
+- Rotate through box camouflage with B.
+- Move with the Left Stick.
+- When the spotlight swings around, make sure you are disguised as the same crate pile you stand on and your antenna is not extended.
 
 #Pictures
 <img src="https://lh3.googleusercontent.com/xS3Zlxt78BukTXrZrSfFw4ZJzieXoqWJGR8IbTk3Xx4=w1766-h993-no">
