@@ -19,3 +19,5 @@ $ <execute the game as per your platform>
 
 #Tips
 - If you have tearing problems, run in windowed mode.
+- There is a good script for object pooling [Assets/Scripts/Spawner.cs](https://github.com/Stuart4/TheCrateEscape/blob/master/Assets/Scripts/Spawner.cs).
+- There is an awesome character movement script in [Assets/Scripts/Character.cs](https://github.com/Stuart4/TheCrateEscape/blob/master/Assets/Scripts/Character.cs) that provides ground checking, jumping, jump delaying, and L/R movement.
