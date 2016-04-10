@@ -8,11 +8,14 @@ public class Character : MonoBehaviour {
 	public float upSpeed = 100f;
 	public bool isGrounded = false;
 	public bool canJump = true;
+	public bool canHitTransmit = true;
+	public bool canHitSwitch = true;
 	public Transform groundCheck;
 	public float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
 	public float torque = 5f;
 	public float jumpDelay = 1f;
+	public float buttonDelay = 0.4f;
 	public bool transmitting = false;
 	public int boxStatus = 0;
 	private Rigidbody2D rb;
@@ -60,11 +63,13 @@ public class Character : MonoBehaviour {
 					break;
 			}
 		}
-		if (Input.GetButtonDown("SwitchCrate") && transmitting) {
+		if (Input.GetButtonDown("SwitchCrate") && transmitting && canHitSwitch) {
 			switchCrate();
+			Invoke ("resetHitSwitch", buttonDelay);
 		}
-		if (Input.GetButtonUp("Transmit")) {
+		if (Input.GetButtonUp("Transmit") && canHitTransmit) {
 			toggleTransmit();
+			Invoke ("resetHitTransmit", buttonDelay);
 		}
 	}
 
@@ -110,5 +115,13 @@ public class Character : MonoBehaviour {
 
 	void resetJump() {
 		canJump = true;
+	}
+
+	void resetHitTransmit() {
+		canHitTransmit = true;
+	}
+
+	void resetHitSwitch() {
+		canHitSwitch = true;
 	}
 }
